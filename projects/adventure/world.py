@@ -3,12 +3,17 @@ import random
 import math
 
 class World:
+
     def __init__(self):
         self.startingRoom = None
         self.rooms = {}
         self.roomGrid = []
         self.gridSize = 0
+
+
+
     def loadGraph(self, roomGraph):
+
         numRooms = len(roomGraph)
         rooms = [None] * numRooms
         gridSize = 1
@@ -34,7 +39,10 @@ class World:
                 self.rooms[roomID].connectRooms('w', self.rooms[roomGraph[roomID][1]['w']])
         self.startingRoom = self.rooms[0]
 
+
+
     def printRooms(self):
+        
         rotatedRoomGrid = []
         for i in range(0, len(self.roomGrid)):
             rotatedRoomGrid.append([None] * len(self.roomGrid))
